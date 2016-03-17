@@ -26,6 +26,6 @@ Apart from this README, you can find details and examples of using the SDK in th
 
 var client = new CrayonApiClient("https://apiv1.crayon.com/", ClientId, ClientSecret);
 var token = client.Tokens.GetUserToken(Username, Password).GetData().AccessToken;
-var organizations = Client.Organizations.GetOrganizations(token, new OrganizationFilter()).GetData()
+var organizations = client.Organizations.GetOrganizations(token, new OrganizationFilter()).GetData()
             
 ````
