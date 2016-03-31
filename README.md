@@ -18,7 +18,7 @@ PM> Install-Package Crayon.Api.Sdk
 Apart from this README, you can find details and examples of using the SDK in the following places:  
 
 - [Github Sample Code Repository](https://github.com/CrayonGroup/crayon-api-sdk-samples)
-- [API Documentation](http://api.docs.crayon.com/) 
+- [API Documentation](https://apidocs.crayon.com/) 
 - [API Endpoints](https://apiv1.crayon.com/docs/) 
 
 ## Usage
