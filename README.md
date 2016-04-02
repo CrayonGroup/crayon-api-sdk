@@ -10,7 +10,7 @@ Requires .NET 4.5.1 or later and Visual Studio 2015 or later.
 To install, run the following command in the Package Manager Console:
 ````csharp
 
-PM> Install-Package Crayon.Api.Sdk
+PM> Install-Package Crayon.Api.Sdk -Pre
 
 ````
 
