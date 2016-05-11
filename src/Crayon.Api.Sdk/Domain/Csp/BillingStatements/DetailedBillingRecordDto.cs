@@ -1,4 +1,5 @@
 ﻿using System;
+using Crayon.Api.Sdk.Domain.Products;
 
 namespace Crayon.Api.Sdk.Domain.Csp.BillingStatements
 {
@@ -16,9 +17,7 @@ namespace Crayon.Api.Sdk.Domain.Csp.BillingStatements
 
         public string CustomerTenantId { get; set; }
 
-        public decimal Price { get; set; }
-
-        public string Currency { get; set; }
+        public Price SalesUnitPriceWithMargin { get; set; }
 
         public decimal TotalLinePrice { get; set; }
 

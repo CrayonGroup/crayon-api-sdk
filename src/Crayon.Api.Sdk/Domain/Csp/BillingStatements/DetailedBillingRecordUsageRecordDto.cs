@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Crayon.Api.Sdk.Domain.Products;
 
 namespace Crayon.Api.Sdk.Domain.Csp.BillingStatements
 {
@@ -11,7 +12,7 @@ namespace Crayon.Api.Sdk.Domain.Csp.BillingStatements
 
         public int ResellerCustomerId { get; set; }
 
-        public string EntitlementId { get; set; }
+        public string PublisherSubscriptionId { get; set; }
 
         public DateTime UsageStartDateTime { get; set; }
 
@@ -41,7 +42,7 @@ namespace Crayon.Api.Sdk.Domain.Csp.BillingStatements
 
         public string OperatingUnit { get; set; }
 
-        public string PublisherCustomerId { get; set; }
+        public string PublisherCustomerTenantId { get; set; }
 
         public DateTime ReportStartDate { get; set; }
 
@@ -51,17 +52,11 @@ namespace Crayon.Api.Sdk.Domain.Csp.BillingStatements
 
         public int? SubscriptionId { get; set; }
 
-        public decimal? PurchaseUnitPrice { get; set; }
+        public Price PurchaseUnitPrice { get; set; }
 
-        public string PurchaseUnitPriceCurrencyCode { get; set; }
+        public Price SalesUnitPrice { get; set; }
 
-        public decimal? SalesUnitPrice { get; set; }
-
-        public string SalesUnitPriceCurrencyCode { get; set; }
-
-        public decimal? UnitPrice { get; set; }
-
-        public string UnitPriceCurrencyCode { get; set; }
+        public Price UnitPrice { get; set; }
 
         public int? PriceId { get; set; }
 
