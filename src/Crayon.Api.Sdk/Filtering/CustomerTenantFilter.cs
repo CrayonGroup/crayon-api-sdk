@@ -1,4 +1,4 @@
-﻿using Crayon.Api.Sdk.Domain.CloudProvisioning.CustomerTenants;
+﻿using Crayon.Api.Sdk.Domain.Csp;
 using Crayon.Api.Sdk.Filtering.Extensions;
 
 namespace Crayon.Api.Sdk.Filtering

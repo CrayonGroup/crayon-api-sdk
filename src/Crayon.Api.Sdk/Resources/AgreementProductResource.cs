@@ -1,4 +1,4 @@
-﻿using Crayon.Api.Sdk.Domain.Products;
+﻿using Crayon.Api.Sdk.Domain;
 using Crayon.Api.Sdk.Filtering;
 
 namespace Crayon.Api.Sdk.Resources

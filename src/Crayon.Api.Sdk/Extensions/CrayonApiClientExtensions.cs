@@ -1,10 +1,9 @@
-﻿using Crayon.Api.Sdk.Domain.Access;
+﻿using Crayon.Api.Sdk.Domain;
 using Crayon.Api.Sdk.Filtering;
 using Crayon.Api.Sdk.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Crayon.Api.Sdk.Domain.Products;
 
 namespace Crayon.Api.Sdk.Extensions
 {

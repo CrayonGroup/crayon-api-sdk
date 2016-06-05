@@ -1,4 +1,4 @@
-﻿using Crayon.Api.Sdk.Domain.Secrets;
+﻿using Crayon.Api.Sdk.Domain;
 
 namespace Crayon.Api.Sdk.Resources
 {

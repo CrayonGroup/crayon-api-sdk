@@ -1,4 +1,4 @@
-﻿using Crayon.Api.Sdk.Domain.Tokens;
+﻿using Crayon.Api.Sdk.Domain;
 
 namespace Crayon.Api.Sdk.Resources
 {

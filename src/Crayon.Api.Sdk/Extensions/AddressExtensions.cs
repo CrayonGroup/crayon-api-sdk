@@ -1,4 +1,4 @@
-﻿using Crayon.Api.Sdk.Domain.Addresses;
+﻿using Crayon.Api.Sdk.Domain;
 using System.Collections.Generic;
 using System.Linq;
 

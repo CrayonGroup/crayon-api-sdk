@@ -1,4 +1,4 @@
-﻿using Crayon.Api.Sdk.Domain.MasterData.Programs;
+﻿using Crayon.Api.Sdk.Domain.MasterData;
 using Crayon.Api.Sdk.Filtering;
 using Crayon.Api.Sdk.Filtering.Extensions;
 

@@ -1,4 +1,4 @@
-﻿using Crayon.Api.Sdk.Domain.Users;
+﻿using Crayon.Api.Sdk.Domain;
 using Crayon.Api.Sdk.Filtering.Extensions;
 
 namespace Crayon.Api.Sdk.Filtering

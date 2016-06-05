@@ -1,4 +1,4 @@
-﻿using Crayon.Api.Sdk.Domain.Access;
+﻿using Crayon.Api.Sdk.Domain;
 using System.Collections.Generic;
 
 namespace Crayon.Api.Sdk.Resources

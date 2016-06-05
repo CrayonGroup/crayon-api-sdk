@@ -1,4 +1,4 @@
-﻿using Crayon.Api.Sdk.Domain.Common;
+﻿using Crayon.Api.Sdk.Domain;
 using Newtonsoft.Json;
 using System;
 using System.Net;
