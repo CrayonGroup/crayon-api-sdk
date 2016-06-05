@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Crayon.Api.Sdk.Domain.Common
 {
-    public class ApiCollection<T>
+    [JsonObject]
+    public class ApiCollection<T> : IEnumerable<T>
     {
         public ApiCollection()
         {
@@ -18,5 +21,15 @@ namespace Crayon.Api.Sdk.Domain.Common
         public List<T> Items { get; set; }
 
         public long TotalHits { get; set; }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return Items.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }

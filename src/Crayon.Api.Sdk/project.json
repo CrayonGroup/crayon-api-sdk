@@ -1,5 +1,5 @@
 {
-  "version": "1.0.5-rc1",
+  "version": "1.2.1-rc2-00001",
   "title": "Crayon API SDK",
   "description": "A C# library for the Crayon Api.",
   "authors": [ "Crayon" ],
