@@ -13,10 +13,10 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<UserCollection> Get(string token, UserFilter filter = null)
+        public CrayonApiClientDataResult<ApiCollection<User>> Get(string token, UserFilter filter = null)
         {
             var uri = "/api/v1/users/".Append(filter);
-            return _client.Get<UserCollection>(token, uri);
+            return _client.Get<ApiCollection<User>>(token, uri);
         }
 
         public CrayonApiClientDataResult<User> GetById(string token, string id)

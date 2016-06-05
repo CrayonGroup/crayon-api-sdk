@@ -12,10 +12,10 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<OrganizationAccessCollection> GetGrant(string token, int organizationId, string userId)
+        public CrayonApiClientDataResult<ApiCollection<OrganizationAccess>> GetGrant(string token, int organizationId, string userId)
         {
             var uri = $"/api/v1/organizationaccess/grant/?organizationId={organizationId}&userId={userId}";
-            return _client.Get<OrganizationAccessCollection>(token, uri);
+            return _client.Get<ApiCollection<OrganizationAccess>>(token, uri);
         }
 
         public CrayonApiClientDataResult<List<OrganizationAccess>> Update(string token, List<OrganizationAccess> list)

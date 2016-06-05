@@ -9,12 +9,12 @@ namespace Crayon.Api.Sdk.Extensions
 {
     public static class CrayonApiClientExtensions
     {
-        public static CrayonApiClientDataResult<OrganizationAccessCollection> GetGrantForUser(this OrganizationAccessResource resource, string token, string userId)
+        public static CrayonApiClientDataResult<ApiCollection<OrganizationAccess>> GetGrantForUser(this OrganizationAccessResource resource, string token, string userId)
         {
             return resource.GetGrant(token, 0, userId);
         }
 
-        public static CrayonApiClientDataResult<OrganizationAccessCollection> GetGrantForOrganization(this OrganizationAccessResource resource, string token, int organizationId)
+        public static CrayonApiClientDataResult<ApiCollection<OrganizationAccess>> GetGrantForOrganization(this OrganizationAccessResource resource, string token, int organizationId)
         {
             return resource.GetGrant(token, organizationId, null);
         }

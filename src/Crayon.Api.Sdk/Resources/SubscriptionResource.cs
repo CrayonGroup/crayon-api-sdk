@@ -1,4 +1,5 @@
-﻿using Crayon.Api.Sdk.Domain.Csp;
+﻿using Crayon.Api.Sdk.Domain;
+using Crayon.Api.Sdk.Domain.Csp;
 using Crayon.Api.Sdk.Filtering;
 using Crayon.Api.Sdk.Filtering.Extensions;
 
@@ -13,10 +14,10 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<SubscriptionCollection> Get(string token, SubscriptionFilter filter = null)
+        public CrayonApiClientDataResult<ApiCollection<Subscription>> Get(string token, SubscriptionFilter filter = null)
         {
             var uri = "/api/v1/subscriptions/".Append(filter);
-            return _client.Get<SubscriptionCollection>(token, uri);
+            return _client.Get<ApiCollection<Subscription>>(token, uri);
         }
 
         public CrayonApiClientDataResult<SubscriptionDetailed> GetById(string token, int id)

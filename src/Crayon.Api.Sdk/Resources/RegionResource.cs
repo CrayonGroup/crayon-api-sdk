@@ -1,4 +1,5 @@
-﻿using Crayon.Api.Sdk.Domain.MasterData;
+﻿using Crayon.Api.Sdk.Domain;
+using Crayon.Api.Sdk.Domain.MasterData;
 using Crayon.Api.Sdk.Filtering;
 using Crayon.Api.Sdk.Filtering.Extensions;
 
@@ -13,10 +14,10 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<RegionCollection> Get(string token, RegionFilter filter = null)
+        public CrayonApiClientDataResult<ApiCollection<Region>> Get(string token, RegionFilter filter = null)
         {
             var uri = "/api/v1/regions/".Append(filter);
-            return _client.Get<RegionCollection>(token, uri);
+            return _client.Get<ApiCollection<Region>>(token, uri);
         }
     }
 }

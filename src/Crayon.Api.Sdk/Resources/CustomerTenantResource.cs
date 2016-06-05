@@ -1,4 +1,5 @@
-﻿using Crayon.Api.Sdk.Domain.Csp;
+﻿using Crayon.Api.Sdk.Domain;
+using Crayon.Api.Sdk.Domain.Csp;
 using Crayon.Api.Sdk.Filtering;
 using Crayon.Api.Sdk.Filtering.Extensions;
 
@@ -13,10 +14,10 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<CustomerTenantCollection> Get(string token, CustomerTenantFilter filter = null)
+        public CrayonApiClientDataResult<ApiCollection<CustomerTenant>> Get(string token, CustomerTenantFilter filter = null)
         {
             var uri = "api/v1/customertenants/".Append(filter);
-            return _client.Get<CustomerTenantCollection>(token, uri);
+            return _client.Get<ApiCollection<CustomerTenant>>(token, uri);
         }
 
         public CrayonApiClientDataResult<CustomerTenant> GetById(string token, int id)

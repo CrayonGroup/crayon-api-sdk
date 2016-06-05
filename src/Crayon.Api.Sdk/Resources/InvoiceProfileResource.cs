@@ -13,10 +13,10 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<InvoiceProfileCollection> Get(string token, InvoiceProfileFilter filter = null)
+        public CrayonApiClientDataResult<ApiCollection<InvoiceProfile>> Get(string token, InvoiceProfileFilter filter = null)
         {
             var uri = "/api/v1/invoiceprofiles/".Append(filter);
-            return _client.Get<InvoiceProfileCollection>(token, uri);
+            return _client.Get<ApiCollection<InvoiceProfile>>(token, uri);
         }
 
         public CrayonApiClientDataResult<InvoiceProfile> GetById(string token, int id)
