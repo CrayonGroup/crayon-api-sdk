@@ -3,7 +3,7 @@ using System;
 
 namespace Crayon.Api.Sdk.Filtering
 {
-    public class BillingStatementFilter : IPaginationFilter
+    public class BillingStatementFilter : IFilter
     {
         public BillingStatementFilter()
         {
