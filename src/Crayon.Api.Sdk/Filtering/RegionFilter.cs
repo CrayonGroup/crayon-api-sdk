@@ -3,7 +3,7 @@ using Crayon.Api.Sdk.Filtering.Extensions;
 
 namespace Crayon.Api.Sdk.Filtering
 {
-    public class RegionFilter : IFilter
+    public class RegionFilter : IHttpFilter
     {
         public RegionFilter()
         {
@@ -18,7 +18,7 @@ namespace Crayon.Api.Sdk.Filtering
 
         public string ToQueryString()
         {
-            return this.ToUrlQuery();
+            return this.ToQuery();
         }
     }
 }

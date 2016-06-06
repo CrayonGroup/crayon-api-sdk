@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Crayon.Api.Sdk.Filtering
 {
-    public class AgreementFilter : IFilter
+    public class AgreementFilter : IHttpFilter
     {
         public AgreementFilter()
         {
@@ -34,7 +34,7 @@ namespace Crayon.Api.Sdk.Filtering
 
         public string ToQueryString()
         {
-            return this.ToUrlQuery();
+            return this.ToQuery();
         }
     }
 }

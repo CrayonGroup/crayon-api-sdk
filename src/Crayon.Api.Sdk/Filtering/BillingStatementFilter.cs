@@ -3,7 +3,7 @@ using System;
 
 namespace Crayon.Api.Sdk.Filtering
 {
-    public class BillingStatementFilter : IFilter
+    public class BillingStatementFilter : IHttpFilter
     {
         public BillingStatementFilter()
         {
@@ -22,7 +22,7 @@ namespace Crayon.Api.Sdk.Filtering
 
         public string ToQueryString()
         {
-            return this.ToUrlQuery();
+            return this.ToQuery();
         }
     }
 }

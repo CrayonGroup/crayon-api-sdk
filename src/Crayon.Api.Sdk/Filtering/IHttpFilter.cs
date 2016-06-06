@@ -1,6 +1,6 @@
 ﻿namespace Crayon.Api.Sdk.Filtering
 {
-    public interface IFilter
+    public interface IHttpFilter
     {
         string ToQueryString();
     }

@@ -3,7 +3,7 @@ using Crayon.Api.Sdk.Filtering.Extensions;
 
 namespace Crayon.Api.Sdk.Filtering
 {
-    public class CustomerTenantFilter : IFilter
+    public class CustomerTenantFilter : IHttpFilter
     {
         public CustomerTenantFilter()
         {
@@ -21,7 +21,7 @@ namespace Crayon.Api.Sdk.Filtering
 
         public string ToQueryString()
         {
-            return this.ToUrlQuery();
+            return this.ToQuery();
         }
     }
 }

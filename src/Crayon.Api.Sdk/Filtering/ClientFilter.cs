@@ -2,7 +2,7 @@
 
 namespace Crayon.Api.Sdk.Filtering
 {
-    public class ClientFilter : IFilter
+    public class ClientFilter : IHttpFilter
     {
         public ClientFilter()
         {
@@ -16,7 +16,7 @@ namespace Crayon.Api.Sdk.Filtering
 
         public string ToQueryString()
         {
-            return this.ToUrlQuery();
+            return this.ToQuery();
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using Crayon.Api.Sdk.Domain;
-using Crayon.Api.Sdk.Filtering.Extensions;
 using System.Net.Http;
 
 namespace Crayon.Api.Sdk.Resources
@@ -15,7 +14,7 @@ namespace Crayon.Api.Sdk.Resources
 
         public CrayonApiClientDataResult<ApiCollection<BlogItem>> Get(int count)
         {
-            var uri = "/api/v1/blogitems/".Append("count", count);
+            var uri = $"/api/v1/blogitems/?count={count}";
             var request = new HttpRequestMessage(HttpMethod.Get, uri);
 
             var response = _client.SendRequest(request);

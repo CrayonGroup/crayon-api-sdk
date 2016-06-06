@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Crayon.Api.Sdk.Filtering
 {
-    public class PublisherFilter : IFilter
+    public class PublisherFilter : IHttpFilter
     {
         public PublisherFilter()
         {
@@ -19,7 +19,7 @@ namespace Crayon.Api.Sdk.Filtering
 
         public string ToQueryString()
         {
-            return this.ToUrlQuery();
+            return this.ToQuery();
         }
     }
 }
