@@ -26,12 +26,12 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<Token> GetUserToken(string clientId, string clientSecret, string userName, string password)
+        public CrayonApiClientResult<Token> GetUserToken(string clientId, string clientSecret, string userName, string password)
         {
             return GetUserToken(clientId, clientSecret, userName, password, DefaultScopes);
         }
 
-        public CrayonApiClientDataResult<Token> GetUserToken(string clientId, string clientSecret, string userName, string password, IEnumerable<string> scopes)
+        public CrayonApiClientResult<Token> GetUserToken(string clientId, string clientSecret, string userName, string password, IEnumerable<string> scopes)
         {
             if (scopes == null)
             {

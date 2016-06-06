@@ -13,7 +13,7 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<AgreementCollection> Get(string token, AgreementFilter filter = null)
+        public CrayonApiClientResult<AgreementCollection> Get(string token, AgreementFilter filter = null)
         {
             var uri = "/api/v1/agreements/".Append(filter);
             return _client.Get<AgreementCollection>(token, uri);

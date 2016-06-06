@@ -14,13 +14,13 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<ApiCollection<Publisher>> Get(string token, PublisherFilter filter = null)
+        public CrayonApiClientResult<ApiCollection<Publisher>> Get(string token, PublisherFilter filter = null)
         {
             var uri = "/api/v1/publishers/".Append(filter);
             return _client.Get<ApiCollection<Publisher>>(token, uri);
         }
 
-        public CrayonApiClientDataResult<Publisher> GetById(string token, int id)
+        public CrayonApiClientResult<Publisher> GetById(string token, int id)
         {
             var uri = $"/api/v1/publishers/{id}/";
             return _client.Get<Publisher>(token, uri);

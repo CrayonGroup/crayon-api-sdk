@@ -13,31 +13,31 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<ApiCollection<User>> Get(string token, UserFilter filter = null)
+        public CrayonApiClientResult<ApiCollection<User>> Get(string token, UserFilter filter = null)
         {
             var uri = "/api/v1/users/".Append(filter);
             return _client.Get<ApiCollection<User>>(token, uri);
         }
 
-        public CrayonApiClientDataResult<User> GetById(string token, string id)
+        public CrayonApiClientResult<User> GetById(string token, string id)
         {
             var uri = $"/api/v1/users/{id}/";
             return _client.Get<User>(token, uri);
         }
 
-        public CrayonApiClientDataResult<User> GetByUserName(string token, string name)
+        public CrayonApiClientResult<User> GetByUserName(string token, string name)
         {
             var uri = $"/api/v1/users/user/?userName={name}";
             return _client.Get<User>(token, uri);
         }
 
-        public CrayonApiClientDataResult<User> Create(string token, User user)
+        public CrayonApiClientResult<User> Create(string token, User user)
         {
             var uri = "/api/v1/users/";
             return _client.Post<User>(token, uri, user);
         }
 
-        public CrayonApiClientDataResult<User> Update(string token, User user)
+        public CrayonApiClientResult<User> Update(string token, User user)
         {
             Guard.NotNull(user, nameof(user));
 
@@ -51,7 +51,7 @@ namespace Crayon.Api.Sdk.Resources
             return _client.Delete(token, uri);
         }
 
-        public virtual CrayonApiClientDataResult<bool> ChangePassword(string token, string userId, string newPassword)
+        public virtual CrayonApiClientResult<bool> ChangePassword(string token, string userId, string newPassword)
         {
             var uri = "/api/v1/users/user/changepassword/";
             return _client.Put<bool>(token, uri, new ChangePassword { UserId = userId, NewPassword = newPassword });

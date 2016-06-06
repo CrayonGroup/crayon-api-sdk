@@ -14,7 +14,7 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<ApiCollection<Region>> Get(string token, RegionFilter filter = null)
+        public CrayonApiClientResult<ApiCollection<Region>> Get(string token, RegionFilter filter = null)
         {
             var uri = "/api/v1/regions/".Append(filter);
             return _client.Get<ApiCollection<Region>>(token, uri);

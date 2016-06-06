@@ -11,7 +11,7 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<Me> Get(string token)
+        public CrayonApiClientResult<Me> Get(string token)
         {
             var uri = "/api/v1/me/";
             return _client.Get<Me>(token, uri);

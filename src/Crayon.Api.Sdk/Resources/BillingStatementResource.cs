@@ -14,13 +14,13 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<ApiCollection<BillingStatement>> Get(string token, BillingStatementFilter statementFilter = null)
+        public CrayonApiClientResult<ApiCollection<BillingStatement>> Get(string token, BillingStatementFilter statementFilter = null)
         {
             var uri = "/api/v1/billingstatements/".Append(statementFilter);
             return _client.Get<ApiCollection<BillingStatement>>(token, uri);
         }
 
-        public CrayonApiClientDataResult<BillingStatementFile> GetAsFile(string token, int id)
+        public CrayonApiClientResult<BillingStatementFile> GetAsFile(string token, int id)
         {
             var uri = $"/api/v1/billingstatements/file/{id}";
             return _client.Get<BillingStatementFile>(token, uri);

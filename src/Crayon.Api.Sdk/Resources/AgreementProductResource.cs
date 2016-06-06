@@ -15,13 +15,13 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<AgreementProductCollection> Get(string token, AgreementProductFilter filter = null)
+        public CrayonApiClientResult<AgreementProductCollection> Get(string token, AgreementProductFilter filter = null)
         {
             var uri = "/api/v1/agreementproducts/";
             return _client.Post<AgreementProductCollection>(token, uri, filter);
         }
 
-        public CrayonApiClientDataResult<AgreementProductCollection> GetCspSeatProducts(string token, AgreementProductFilter filter, bool includeAddOns)
+        public CrayonApiClientResult<AgreementProductCollection> GetCspSeatProducts(string token, AgreementProductFilter filter, bool includeAddOns)
         {
             filter.Include = filter.Include ?? new AgreementProductsSubFilter();
             filter.Include.PublisherNames = filter.Include.PublisherNames ?? new List<string>();

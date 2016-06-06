@@ -12,7 +12,7 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<ApiCollection<BlogItem>> Get(int count)
+        public CrayonApiClientResult<ApiCollection<BlogItem>> Get(int count)
         {
             var uri = $"/api/v1/blogitems/?count={count}";
             var request = new HttpRequestMessage(HttpMethod.Get, uri);

@@ -14,7 +14,7 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<ApiCollection<UsageRecordGrouped>> GetAsGrouped(string token, UsageRecordGroupedFilter filter = null)
+        public CrayonApiClientResult<ApiCollection<UsageRecordGrouped>> GetAsGrouped(string token, UsageRecordGroupedFilter filter = null)
         {
             var uri = "/api/v1/usagerecords/grouped/".Append(filter);
             return _client.Get<ApiCollection<UsageRecordGrouped>>(token, uri);

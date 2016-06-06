@@ -14,37 +14,37 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<ApiCollection<CustomerTenant>> Get(string token, CustomerTenantFilter filter = null)
+        public CrayonApiClientResult<ApiCollection<CustomerTenant>> Get(string token, CustomerTenantFilter filter = null)
         {
             var uri = "api/v1/customertenants/".Append(filter);
             return _client.Get<ApiCollection<CustomerTenant>>(token, uri);
         }
 
-        public CrayonApiClientDataResult<CustomerTenant> GetById(string token, int id)
+        public CrayonApiClientResult<CustomerTenant> GetById(string token, int id)
         {
             var uri = $"api/v1/customertenants/{id}/";
             return _client.Get<CustomerTenant>(token, uri);
         }
 
-        public CrayonApiClientDataResult<CustomerTenantDetailed> GetDetailedById(string token, int id)
+        public CrayonApiClientResult<CustomerTenantDetailed> GetDetailedById(string token, int id)
         {
             var uri = $"api/v1/customertenants/{id}/detailed/";
             return _client.Get<CustomerTenantDetailed>(token, uri);
         }
 
-        public CrayonApiClientDataResult<CustomerTenantDetailed> Create(string token, CustomerTenantDetailed customerTenant)
+        public CrayonApiClientResult<CustomerTenantDetailed> Create(string token, CustomerTenantDetailed customerTenant)
         {
             var uri = "api/v1/customertenants/";
             return _client.Post<CustomerTenantDetailed>(token, uri, customerTenant);
         }
 
-        public CrayonApiClientDataResult<CustomerTenantDetailed> CreateExisting(string token, CustomerTenantDetailed customerTenant)
+        public CrayonApiClientResult<CustomerTenantDetailed> CreateExisting(string token, CustomerTenantDetailed customerTenant)
         {
             var uri = "api/v1/customertenants/existing/";
             return _client.Post<CustomerTenantDetailed>(token, uri, customerTenant);
         }
 
-        public CrayonApiClientDataResult<CustomerTenantDetailed> Update(string token, CustomerTenantDetailed customerTenant)
+        public CrayonApiClientResult<CustomerTenantDetailed> Update(string token, CustomerTenantDetailed customerTenant)
         {
             Guard.NotNull(customerTenant, nameof(customerTenant));
 

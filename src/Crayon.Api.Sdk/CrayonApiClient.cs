@@ -80,19 +80,19 @@ namespace Crayon.Api.Sdk
         public UsageRecordResource UsageRecords { get; }
         public UserResource Users { get; }
 
-        internal CrayonApiClientDataResult<T> Get<T>(string token, string uri)
+        internal CrayonApiClientResult<T> Get<T>(string token, string uri)
         {
             var response = SendRequest(token, uri, HttpMethod.Get);
             return DeserializeResponseToResultOf<T>(response);
         }
 
-        internal CrayonApiClientDataResult<T> Post<T>(string token, string uri, object value)
+        internal CrayonApiClientResult<T> Post<T>(string token, string uri, object value)
         {
             var response = SendRequest(token, uri, HttpMethod.Post, value);
             return DeserializeResponseToResultOf<T>(response);
         }
 
-        internal CrayonApiClientDataResult<T> Put<T>(string token, string uri, object value)
+        internal CrayonApiClientResult<T> Put<T>(string token, string uri, object value)
         {
             var response = SendRequest(token, uri, HttpMethod.Put, value);
             return DeserializeResponseToResultOf<T>(response);
@@ -104,10 +104,10 @@ namespace Crayon.Api.Sdk
             return new CrayonApiClientResult(response);
         }
 
-        internal CrayonApiClientDataResult<T> DeserializeResponseToResultOf<T>(HttpResponseMessage response)
+        internal CrayonApiClientResult<T> DeserializeResponseToResultOf<T>(HttpResponseMessage response)
         {
             var result = DeserializeResponseTo<T>(response);
-            return new CrayonApiClientDataResult<T>(result, response);
+            return new CrayonApiClientResult<T>(result, response);
         }
 
         protected T DeserializeResponseTo<T>(HttpResponseMessage response)
