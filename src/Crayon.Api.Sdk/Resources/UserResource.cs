@@ -53,8 +53,14 @@ namespace Crayon.Api.Sdk.Resources
 
         public virtual CrayonApiClientResult<bool> ChangePassword(string token, string userId, string newPassword)
         {
-            var uri = "/api/v1/users/user/changepassword/";
-            return _client.Put<bool>(token, uri, new ChangePassword { UserId = userId, NewPassword = newPassword });
+            var uri = $"/api/v1/users/{userId}/changepassword/";
+            return _client.Put<bool>(token, uri, new UserChangePassword { UserId = userId, NewPassword = newPassword });
+        }
+
+        public virtual CrayonApiClientResult<bool> ChangePassword(string token, string userId, string oldPassword, string newPassword)
+        {
+            var uri = $"/api/v1/users/{userId}/changepassword/";
+            return _client.Put<bool>(token, uri, new UserChangePassword { UserId = userId, OldPassword = oldPassword, NewPassword = newPassword });
         }
     }
 }
