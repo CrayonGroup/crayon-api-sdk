@@ -1,4 +1,6 @@
-﻿namespace Crayon.Api.Sdk.Domain
+﻿using System.Linq;
+
+namespace Crayon.Api.Sdk.Domain
 {
     public class Address
     {
@@ -31,5 +33,15 @@
         public bool Primary { get; set; }
 
         public AddressType AddressType { get; set; }
+
+        public string ToOneLineString()
+        {
+            if (!string.IsNullOrWhiteSpace(CompleteAddress))
+            {
+                return CompleteAddress.Replace("\r\n", " ").Replace('\r', ' ').Replace('\n', ' ');
+            }
+
+            return string.Join(" ", new[] { Name, Street, ZipCode, City, CountryCode }.Where(s => s.Length > 0));
+        }
     }
 }

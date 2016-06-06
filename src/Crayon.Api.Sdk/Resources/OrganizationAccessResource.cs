@@ -23,5 +23,15 @@ namespace Crayon.Api.Sdk.Resources
             var uri = "/api/v1/organizationaccess/";
             return _client.Put<List<OrganizationAccess>>(token, uri, list);
         }
+
+        public CrayonApiClientDataResult<ApiCollection<OrganizationAccess>> GetGrantForUser(string token, string userId)
+        {
+            return GetGrant(token, 0, userId);
+        }
+
+        public CrayonApiClientDataResult<ApiCollection<OrganizationAccess>> GetGrantForOrganization(string token, int organizationId)
+        {
+            return GetGrant(token, organizationId, null);
+        }
     }
 }
