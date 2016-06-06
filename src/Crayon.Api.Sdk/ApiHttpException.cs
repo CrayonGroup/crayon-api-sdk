@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace Crayon.Api.Sdk.Exceptions
+namespace Crayon.Api.Sdk
 {
     public class ApiHttpException : Exception
     {

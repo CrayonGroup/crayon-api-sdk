@@ -1,5 +1,4 @@
-﻿using Crayon.Api.Sdk.Exceptions;
-using System;
+﻿using System;
 using System.Net.Http;
 
 namespace Crayon.Api.Sdk
