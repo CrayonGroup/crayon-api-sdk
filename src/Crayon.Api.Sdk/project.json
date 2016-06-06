@@ -3,9 +3,17 @@
   "title": "Crayon API SDK",
   "description": "A C# library for the Crayon Api.",
   "authors": [ "Crayon" ],
-  "tags": [ "SDK", ".NET", "C#" ],
-  "projectUrl": "https://github.com/CrayonGroup/crayon-api-sdk",
-  "licenseUrl": "",
+
+  "packOptions": {
+    "tags": [ "SDK", ".NET", "C#" ],
+    "projectUrl": "https://github.com/CrayonGroup/crayon-api-sdk",
+    "licenseUrl": "",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/CrayonGroup/crayon-api-sdk"
+    }
+  },
+
   "dependencies": {
     "Newtonsoft.Json": "8.0.3"
   },
@@ -15,16 +23,11 @@
         "System.Net.Http": "4.0.0.0"
       }
     },
-    "dotnet5.4": {
+    "netstandard1.5": {
+      "imports": "dnxcore50",
       "dependencies": {
-        "System.Net.Http": "4.0.0",
-        "Microsoft.CSharp": "4.0.0",
-        "System.Collections": "4.0.10",
-        "System.Linq": "4.0.0",
-        "System.Runtime": "4.0.20",
-        "System.Threading": "4.0.10",
-        "System.Security.Claims": "4.0.0",
-        "System.Collections.Concurrent": "4.0.10"
+        "NETStandard.Library": "1.5.0-rc2-24027",
+        "System.Security.Claims": "4.0.1-rc2-24027"
       }
     }
   }

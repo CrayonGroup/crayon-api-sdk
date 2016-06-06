@@ -18,7 +18,7 @@ namespace Crayon.Api.Sdk.Filtering.Extensions
 
             if (!PropertyDictionary.TryGetValue(type, out properties))
             {
-                properties = type.GetProperties()
+                properties = type.GetTypeInfo().GetProperties()
                     .Where(property => property.CanRead)
                     .ToList();
 
