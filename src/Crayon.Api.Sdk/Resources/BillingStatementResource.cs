@@ -24,5 +24,11 @@ namespace Crayon.Api.Sdk.Resources
             var uri = $"/api/v1/billingstatements/file/{id}";
             return _client.Get<BillingStatementFile>(token, uri);
         }
+
+        public CrayonApiClientResult<BillingRecordCollection> GetBillingRecords(string token, int billingStatementId, BillingRecordFilter filter = null)
+        {
+            var uri = $"/api/v1/billingstatements/{billingStatementId}/records/".Append(filter);
+            return _client.Get<BillingRecordCollection>(token, uri);
+        }
     }
 }
