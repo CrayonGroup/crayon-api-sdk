@@ -1,5 +1,4 @@
 ﻿using Crayon.Api.Sdk.Domain;
-using Crayon.Api.Sdk.Filtering.Extensions;
 using System;
 using System.Collections.Generic;
 

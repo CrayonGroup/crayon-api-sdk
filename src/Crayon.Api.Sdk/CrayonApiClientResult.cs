@@ -28,7 +28,7 @@ namespace Crayon.Api.Sdk
                 throw new ApiHttpException(StatusCode, Content);
             }
 
-            var message = Error.ErrorCode + ": " + Error.Message;
+            var message = $"{Error.ErrorCode}: {Error.Message}";
             var innerException = new Exception(Error.Message);
 
             throw new ApiHttpException(StatusCode, message, innerException) {
@@ -56,7 +56,7 @@ namespace Crayon.Api.Sdk
         public Error Error { get; }
         public Uri ResponseUri { get; }
         public HttpStatusCode StatusCode { get; }
-        protected bool IsSuccessStatusCode { get; }
+        public bool IsSuccessStatusCode { get; }
 
         private Error HandleFailureStatusCode(HttpResponseMessage response)
         {

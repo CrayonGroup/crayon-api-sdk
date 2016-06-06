@@ -1,7 +1,6 @@
 ﻿using Crayon.Api.Sdk.Domain;
 using Crayon.Api.Sdk.Domain.Csp;
 using Crayon.Api.Sdk.Filtering;
-using Crayon.Api.Sdk.Filtering.Extensions;
 
 namespace Crayon.Api.Sdk.Resources
 {
