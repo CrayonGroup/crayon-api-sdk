@@ -1,4 +1,4 @@
-﻿using Crayon.Api.Sdk.Domain.Agreements;
+﻿using Crayon.Api.Sdk.Domain;
 using System;
 using System.Collections.Generic;
 

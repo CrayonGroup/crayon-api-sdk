@@ -1,9 +1,8 @@
-﻿using Crayon.Api.Sdk.Domain.CloudProvisioning.Subscriptions;
-using Crayon.Api.Sdk.Filtering.Extensions;
+﻿using Crayon.Api.Sdk.Domain.Csp;
 
 namespace Crayon.Api.Sdk.Filtering
 {
-    public class SubscriptionFilter : IFilter
+    public class SubscriptionFilter : IHttpFilter
     {
         public SubscriptionFilter()
         {
@@ -24,7 +23,7 @@ namespace Crayon.Api.Sdk.Filtering
 
         public string ToQueryString()
         {
-            return this.ToUrlQuery();
+            return this.ToQuery();
         }
     }
 }

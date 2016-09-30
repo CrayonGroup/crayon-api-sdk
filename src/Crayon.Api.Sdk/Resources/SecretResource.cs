@@ -1,4 +1,4 @@
-﻿using Crayon.Api.Sdk.Domain.Secrets;
+﻿using Crayon.Api.Sdk.Domain;
 
 namespace Crayon.Api.Sdk.Resources
 {
@@ -11,7 +11,7 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        public CrayonApiClientDataResult<Secret> Create(string token, Secret secret)
+        public CrayonApiClientResult<Secret> Create(string token, Secret secret)
         {
             var uri = "/api/v1/secrets/";
             return _client.Post<Secret>(token, uri, secret);

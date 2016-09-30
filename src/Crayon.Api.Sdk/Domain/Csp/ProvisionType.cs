@@ -1,4 +1,4 @@
-﻿namespace Crayon.Api.Sdk.Domain.CloudProvisioning
+﻿namespace Crayon.Api.Sdk.Domain.Csp
 {
     public enum ProvisionType
     {

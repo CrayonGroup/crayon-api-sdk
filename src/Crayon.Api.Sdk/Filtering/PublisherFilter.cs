@@ -1,9 +1,8 @@
-﻿using Crayon.Api.Sdk.Filtering.Extensions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Crayon.Api.Sdk.Filtering
 {
-    public class PublisherFilter : IFilter
+    public class PublisherFilter : IHttpFilter
     {
         public PublisherFilter()
         {
@@ -19,7 +18,7 @@ namespace Crayon.Api.Sdk.Filtering
 
         public string ToQueryString()
         {
-            return this.ToUrlQuery();
+            return this.ToQuery();
         }
     }
 }
