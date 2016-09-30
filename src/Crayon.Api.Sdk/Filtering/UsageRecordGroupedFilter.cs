@@ -1,9 +1,8 @@
-﻿using Crayon.Api.Sdk.Filtering.Extensions;
-using System;
+﻿using System;
 
 namespace Crayon.Api.Sdk.Filtering
 {
-    public class UsageRecordGroupedFilter : IFilter
+    public class UsageRecordGroupedFilter : IHttpFilter
     {
         public int OrganizationId { get; set; }
         public int BillingStatementId { get; set; }
@@ -19,7 +18,7 @@ namespace Crayon.Api.Sdk.Filtering
 
         public string ToQueryString()
         {
-            return this.ToUrlQuery();
+            return this.ToQuery();
         }
     }
 }

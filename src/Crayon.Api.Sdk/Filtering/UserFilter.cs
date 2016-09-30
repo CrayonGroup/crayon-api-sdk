@@ -1,9 +1,8 @@
-﻿using Crayon.Api.Sdk.Domain.Users;
-using Crayon.Api.Sdk.Filtering.Extensions;
+﻿using Crayon.Api.Sdk.Domain;
 
 namespace Crayon.Api.Sdk.Filtering
 {
-    public class UserFilter : IFilter
+    public class UserFilter : IHttpFilter
     {
         public string Search { get; set; }
         public int OrganizationId { get; set; }
@@ -13,7 +12,7 @@ namespace Crayon.Api.Sdk.Filtering
 
         public string ToQueryString()
         {
-            return this.ToUrlQuery();
+            return this.ToQuery();
         }
     }
 }

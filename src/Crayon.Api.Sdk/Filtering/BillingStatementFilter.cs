@@ -1,9 +1,8 @@
-﻿using Crayon.Api.Sdk.Filtering.Extensions;
-using System;
+﻿using System;
 
 namespace Crayon.Api.Sdk.Filtering
 {
-    public class BillingStatementFilter : IPaginationFilter
+    public class BillingStatementFilter : IHttpFilter
     {
         public BillingStatementFilter()
         {
@@ -22,7 +21,7 @@ namespace Crayon.Api.Sdk.Filtering
 
         public string ToQueryString()
         {
-            return this.ToUrlQuery();
+            return this.ToQuery();
         }
     }
 }

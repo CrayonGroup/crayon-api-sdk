@@ -1,9 +1,8 @@
-﻿using Crayon.Api.Sdk.Domain.MasterData.Regions;
-using Crayon.Api.Sdk.Filtering.Extensions;
+﻿using Crayon.Api.Sdk.Domain.MasterData;
 
 namespace Crayon.Api.Sdk.Filtering
 {
-    public class RegionFilter : IFilter
+    public class RegionFilter : IHttpFilter
     {
         public RegionFilter()
         {
@@ -18,7 +17,7 @@ namespace Crayon.Api.Sdk.Filtering
 
         public string ToQueryString()
         {
-            return this.ToUrlQuery();
+            return this.ToQuery();
         }
     }
 }
