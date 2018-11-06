@@ -15,5 +15,7 @@
         public CustomerTenantContact Contact { get; set; }
 
         public CustomerTenantAddress Address { get; set; }
+
+        public CustomerTenantAgreement Agreement { get; set; }
     }
 }

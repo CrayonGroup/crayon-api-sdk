@@ -23,5 +23,7 @@
         public Organization Organization { get; set; }
 
         public ObjectReference InvoiceProfile { get; set; }
+        
+        public CustomerTenantAgreement Agreement { get; set; }
     }
 }
