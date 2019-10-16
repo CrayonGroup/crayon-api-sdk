@@ -4,13 +4,13 @@ A C# library for the Crayon Api.
 
 ## Prerequisites
 
-Requires .NET 4.5.1 or later and Visual Studio 2015 or later.
+Requires .NET 4.5.1 or later and Visual Studio 2019 or later.
 
 ## Installation
 To install, run the following command in the Package Manager Console:
 ````csharp
 
-PM> Install-Package Crayon.Api.Sdk -Pre
+PM> Install-Package Crayon.Api.Sdk
 
 ````
 
