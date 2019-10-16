@@ -56,5 +56,17 @@ namespace Crayon.Api.Sdk.Resources
             var uri = $"/api/v1/customertenants/{id}/".Append("removeFromPublisher", removeFromPublisher);
             return _client.Delete(token, uri);
         }
+
+        public CrayonApiClientResult<ApiCollection<CustomerTenantAgreement>> GetAgreements(string token, int customerTenantId, CustomerTenantAgreementFilter filter)
+        {
+            var uri = $"api/v1/customertenants/{customerTenantId}/agreements/?" + filter.ToQueryString();
+            return _client.Get<ApiCollection<CustomerTenantAgreement>>(token, uri);
+        }
+
+        public CrayonApiClientResult<CustomerTenantAgreement> CreateAgreement(string token, int customerTenantId, CustomerTenantAgreement agreement)
+        {
+            var uri = $"api/v1/customertenants/{customerTenantId}/agreements/";
+            return _client.Post<CustomerTenantAgreement>(token, uri, agreement);
+        }
     }
 }
