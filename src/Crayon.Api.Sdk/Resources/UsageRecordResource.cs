@@ -14,7 +14,7 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
-        [Obsolete("This endpoint is depricated")]
+        [Obsolete("This endpoint is deprecated")]
         public CrayonApiClientResult<ApiCollection<UsageRecordGrouped>> GetAsGrouped(string token, UsageRecordGroupedFilter filter = null)
         {
             var uri = "/api/v1/usagerecords/grouped/".Append(filter);

@@ -26,7 +26,7 @@ namespace Crayon.Api.Sdk.Resources
             return _client.Get<BillingStatementFile>(token, uri);
         }
 
-        [Obsolete("This endpoint is depricated")]
+        [Obsolete("This endpoint is deprecated")]
         public CrayonApiClientResult<BillingRecordCollection> GetBillingRecords(string token, int billingStatementId, BillingRecordFilter filter = null)
         {
             var uri = $"/api/v1/billingstatements/{billingStatementId}/records/".Append(filter);
