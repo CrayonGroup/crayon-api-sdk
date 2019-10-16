@@ -1,6 +1,7 @@
 ﻿using Crayon.Api.Sdk.Domain;
 using Crayon.Api.Sdk.Domain.Csp;
 using Crayon.Api.Sdk.Filtering;
+using System;
 
 namespace Crayon.Api.Sdk.Resources
 {
@@ -25,6 +26,7 @@ namespace Crayon.Api.Sdk.Resources
             return _client.Get<BillingStatementFile>(token, uri);
         }
 
+        [Obsolete("This endpoint is depricated")]
         public CrayonApiClientResult<BillingRecordCollection> GetBillingRecords(string token, int billingStatementId, BillingRecordFilter filter = null)
         {
             var uri = $"/api/v1/billingstatements/{billingStatementId}/records/".Append(filter);

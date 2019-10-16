@@ -1,6 +1,7 @@
 ﻿using Crayon.Api.Sdk.Domain;
 using Crayon.Api.Sdk.Domain.Csp;
 using Crayon.Api.Sdk.Filtering;
+using System;
 
 namespace Crayon.Api.Sdk.Resources
 {
@@ -13,6 +14,7 @@ namespace Crayon.Api.Sdk.Resources
             _client = client;
         }
 
+        [Obsolete("This endpoint is depricated")]
         public CrayonApiClientResult<ApiCollection<UsageRecordGrouped>> GetAsGrouped(string token, UsageRecordGroupedFilter filter = null)
         {
             var uri = "/api/v1/usagerecords/grouped/".Append(filter);
