@@ -10,7 +10,8 @@ namespace Crayon.Api.Sdk.Domain.Csp
         Suspended = 2,
         Deleted = 4,
         CustomerCancellation = 8,
-        Inactive = Suspended | Deleted | CustomerCancellation,
+        Converted = 16,
+        Inactive = Suspended | Deleted | CustomerCancellation | Converted,
         All = Active | Inactive
     }
 }
