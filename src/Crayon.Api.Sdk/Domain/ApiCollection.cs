@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -12,7 +13,7 @@ namespace Crayon.Api.Sdk.Domain
             Items = new List<T>();
         }
 
-        public ApiCollection(List<T> list, int totalHits)
+        public ApiCollection(List<T> list, long totalHits)
         {
             Items = list ?? new List<T>();
             TotalHits = totalHits;

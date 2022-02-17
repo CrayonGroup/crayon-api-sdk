@@ -7,5 +7,8 @@ namespace Crayon.Api.Sdk.Domain.Csp
         public DateTimeOffset EffectiveStartDate { get; set; }
         public DateTimeOffset CommitmentEndDate { get; set; }
         public string SuspensionReasons { get; set; }
+        public int? OriginalAgreementId { get; set; }
+        public SubscriptionPricing Pricing { get; set; }
+        public bool? AttestationAccepted { get; set; }
     }
 }

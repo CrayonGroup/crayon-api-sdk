@@ -3,6 +3,7 @@
     public enum RegionList
     {
         None = 0,
-        MicrosoftCsp = 1
+        MicrosoftCsp = 1,
+        OrganizationSpecific = 2
     }
 }

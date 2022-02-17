@@ -1,17 +1,39 @@
 ﻿using Crayon.Api.Sdk.Domain;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Net;
-using System.Net.Http;
 
 namespace Crayon.Api.Sdk
 {
     public class CrayonApiClientResult<T> : CrayonApiClientResult
     {
-        public CrayonApiClientResult(T data, HttpResponseMessage response)
-            : base(response)
+        public CrayonApiClientResult(T data, HttpStatusCode statusCode, string content, Uri uri)
+            : base(statusCode, content, uri)
         {
-            Data = data;
+            if (IsSuccessStatusCode)
+            {
+                Data = data;
+            }
+        }
+
+        internal CrayonApiClientResult(
+            HttpStatusCode statusCode,
+            string content,
+            Uri url,
+            Error error)
+            : base(statusCode, content, url)
+        {
+            Error = error;
+        }
+
+        internal CrayonApiClientResult(T data, HttpStatusCode statusCode)
+            : base(statusCode, string.Empty, null)
+        {
+            if (IsSuccessStatusCode)
+            {
+                Data = data;
+            }
         }
 
         public T Data { get; }
@@ -39,38 +61,62 @@ namespace Crayon.Api.Sdk
 
     public class CrayonApiClientResult
     {
-        public CrayonApiClientResult(HttpResponseMessage response)
+        public CrayonApiClientResult(HttpStatusCode statusCode, string content, Uri uri)
         {
-            Content = response.Content.ReadAsStringAsync().Result;
-            ResponseUri = response.RequestMessage.RequestUri;
-            StatusCode = response.StatusCode;
-            IsSuccessStatusCode = response.IsSuccessStatusCode;
+            Content = content;
+            ResponseUri = uri;            
+            StatusCode = statusCode;
+            IsSuccessStatusCode = (int)statusCode >= 200 && (int)statusCode <= 299;
 
             if (!IsSuccessStatusCode)
             {
-                Error = HandleFailureStatusCode(response);
+                Error = HandleFailureStatusCode();
             }
         }
 
+        internal CrayonApiClientResult(
+            HttpStatusCode statusCode,
+            string content,
+            Uri url,
+            Error error)
+            : this(statusCode, content, url)
+        {
+            Error = error;
+        }
+
+
         public string Content { get; }
-        public Error Error { get; }
+        public Error Error { get; internal set; }
         public Uri ResponseUri { get; }
         public HttpStatusCode StatusCode { get; }
         public bool IsSuccessStatusCode { get; }
 
-        private Error HandleFailureStatusCode(HttpResponseMessage response)
+        private Error HandleFailureStatusCode()
         {
+            if (string.IsNullOrEmpty(Content))
+            {
+                return new Error {
+                    Message = StatusCode == HttpStatusCode.NotFound ? "Not found" : string.Empty,
+                    ErrorCode = "NO_CONTENT"
+                };
+            }
+
             try
             {
                 return JsonConvert.DeserializeObject<Error>(Content);
             }
-            catch (JsonException ex)
+            catch (Exception ex)
             {
                 return new Error {
                     Message = ex.Message,
-                    ErrorCode = response.StatusCode.ToString()
+                    ErrorCode = "UNABLE_TO_FORMAT_JSON"
                 };
             }
+        }
+
+        public static CrayonApiClientResult<T> NotFound<T>()
+        {
+            return new CrayonApiClientResult<T>(default(T), HttpStatusCode.NotFound, string.Empty, null);
         }
     }
 }

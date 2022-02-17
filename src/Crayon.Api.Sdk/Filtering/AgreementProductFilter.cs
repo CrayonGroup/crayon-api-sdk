@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Crayon.Api.Sdk.Filtering
 {
-    public class AgreementProductFilter
+    public class AgreementProductFilter : IHttpFilter
     {
         public AgreementProductFilter()
         {
@@ -21,9 +21,23 @@ namespace Crayon.Api.Sdk.Filtering
         public string Search { get; set; }
         public int PriceListId { get; set; }
         public int OrganizationId { get; set; }
+        public int CustomerTenantId { get; set; }
+        public int AgreementId { get; set; }
+        public bool? IsTrial { get; set; }
         public List<int> AgreementIds { get; set; }
         public DateTimeOffset? SearchDate { get; set; }
         public AgreementProductsSubFilter Include { get; set; }
         public AgreementProductsSubFilter Exclude { get; set; }
+
+        public string SortKey { get; set; }
+
+        public bool IncludeProductInformation { get; set; }
+
+        public SortOrder SortOrder { get; set; }
+
+        public string ToQueryString()
+        {
+            return this.ToQuery();
+        }
     }
 }

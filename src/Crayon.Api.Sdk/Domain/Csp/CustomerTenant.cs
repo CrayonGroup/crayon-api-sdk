@@ -8,9 +8,13 @@
 
         public ObjectReference Publisher { get; set; }
 
+        public ObjectReference Program { get; set; }
+
         public string PublisherCustomerId { get; set; }
 
         public string ExternalPublisherCustomerId { get; set; }
+
+        public string Domain { get; set; }
 
         public string DomainPrefix { get; set; }
 
@@ -23,5 +27,13 @@
         public Organization Organization { get; set; }
 
         public ObjectReference InvoiceProfile { get; set; }
+
+        public ObjectReference Consumer { get; set; }
+
+        public decimal ResellerMarkup { get; set; }
+
+        public SubscriptionPriceType DefaultSubscriptionPriceType { get; set; }
+
+        public CustomerTenantAgreement agreement { get; set; }
     }
 }

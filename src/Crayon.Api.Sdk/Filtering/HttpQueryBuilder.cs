@@ -32,7 +32,7 @@ namespace Crayon.Api.Sdk.Filtering
         }
 
         public static string ToQuery<T>(this T obj)
-            where T : class
+            where T : class, IHttpFilter
         {
             if (obj == null)
             {
@@ -42,6 +42,22 @@ namespace Crayon.Api.Sdk.Filtering
             IDictionary<string, object> properties = obj.GetCachedProperties();
             var queryParams = properties
                 .Select(pair => ToQueryParam(pair.Key, pair.Value))
+                .Where(IsStringWithValue);
+
+            return string.Join(ParameterDelimiter, queryParams);
+        }
+
+        public static string ToQuery<T>(this T obj, string parentName)
+            where T : class, IHttpSubFilter
+        {
+            if (obj == null)
+            {
+                return string.Empty;
+            }
+
+            IDictionary<string, object> properties = obj.GetCachedProperties();
+            var queryParams = properties
+                .Select(pair => ToQueryParam($"{parentName}.{pair.Key}", pair.Value))
                 .Where(IsStringWithValue);
 
             return string.Join(ParameterDelimiter, queryParams);
@@ -64,6 +80,11 @@ namespace Crayon.Api.Sdk.Filtering
             if (!(value is string) && value is IEnumerable)
             {
                 return ToQueryParam(key, value as IEnumerable);
+            }
+
+            if (value is IHttpSubFilter)
+            {
+                return (value as IHttpSubFilter).ToQueryString(key);
             }
 
             var paramValue = ToQueryParam(value);

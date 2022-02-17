@@ -21,5 +21,9 @@
         public AddressData DeliveryAddress { get; set; }
 
         public AddressData InvoiceAddress { get; set; }
+
+        public int? ConsumerId { get; set; }
+        public int? ContactPersonId { get; set; }
+
     }
 }

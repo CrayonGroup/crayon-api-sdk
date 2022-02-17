@@ -30,9 +30,17 @@ namespace Crayon.Api.Sdk.Domain
 
         public bool HasTerms { get; set; }
 
+        public AgreementType AgreementType { get; set; }
+
         public bool IsActive(DateTimeOffset date)
         {
             return StartDate <= date && EndDate > date && !Disabled;
         }
+
+        public int? ParentAgreementId { get; set; }
+
+        public decimal CommitmentLevel { get; set; }
+
+        public int? ConsumerId { get; set; }
     }
 }

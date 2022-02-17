@@ -12,6 +12,8 @@
 
         public string PartNumber { get; set; }
 
+        public string PublisherProductId { get; set; }
+
         public string ItemLegalName { get; set; }
 
         public string ItemName { get; set; }

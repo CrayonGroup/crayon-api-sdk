@@ -14,13 +14,14 @@ namespace Crayon.Api.Sdk.Filtering
             SearchDate = DateTimeOffset.UtcNow;
         }
 
+        public int OrganizationId { get; set; }
         public List<int> OrganizationIds { get; set; }
         public List<int> PricelistIds { get; set; }
         public AgreementStatus Status { get; set; }
         public List<AgreementType> AgreementTypes { get; set; }
         public List<int> PublisherIds { get; set; }
         public List<int> ProgramIds { get; set; }
-        public DateTimeOffset SearchDate { get; set; }
+        public DateTimeOffset? SearchDate { get; set; }
         public List<int> AgreementIds { get; set; }
         public string SalesPriceCurrency { get; set; }
         public bool TermRequired { get; set; }
