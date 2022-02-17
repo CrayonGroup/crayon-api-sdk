@@ -11,7 +11,5 @@
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
-
-        public ObjectReference Tenant { get; set; }
     }
 }

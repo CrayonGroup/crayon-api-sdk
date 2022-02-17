@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Crayon.Api.Sdk.Domain
 {
@@ -19,10 +20,19 @@ namespace Crayon.Api.Sdk.Domain
         public ObjectReference LicenseAgreementType { get; set; }
         public ObjectReference OperatingSystem { get; set; }
         public ObjectReference Offering { get; set; }
+        public MinimumCommitmentLight MinimumCommitment { get; set; }
         public int UnitCount { get; set; }
         public string Version { get; set; }
         public string PurchaseUnit { get; set; }
+        public string PurchasePeriod { get; set; }
         public DateTimeOffset AddDate { get; set; }
         public DateTimeOffset DeleteDate { get; set; }
+        public string ProductCategory { get; set; }
+        public string Region { get; set; }
+        public bool IsTrial { get; set; }
+        public int DefaultBillingCycleId { get; set; }
+        public int[] AvailableBillingCycleIds { get; set; }
+        public IDictionary<string, object> Attributes { get; set; }
+        public decimal MinimumQuantity { get; set; }
     }
 }

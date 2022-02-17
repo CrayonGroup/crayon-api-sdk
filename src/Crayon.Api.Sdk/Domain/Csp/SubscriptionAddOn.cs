@@ -15,5 +15,10 @@ namespace Crayon.Api.Sdk.Domain.Csp
         public DateTimeOffset CreationDate { get; set; }
         public ProductReference Product { get; set; }
         public ObjectReference Publisher { get; set; }
+        public decimal Markup { get; set; }
+        public SubscriptionTags SubscriptionTags { get; set; }
+        public string TermDuration { get; set; }
+        public bool? AutoRenewEnabled { get; set; }
+        public DateTimeOffset? CancellationAllowedUntilDate { get; set; }
     }
 }

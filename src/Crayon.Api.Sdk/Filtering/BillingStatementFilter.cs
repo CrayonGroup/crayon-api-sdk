@@ -1,4 +1,5 @@
 ﻿using System;
+using Crayon.Api.Sdk.Domain.Csp;
 
 namespace Crayon.Api.Sdk.Filtering
 {
@@ -14,6 +15,7 @@ namespace Crayon.Api.Sdk.Filtering
 
         public int InvoiceProfileId { get; set; }
         public int OrganizationId { get; set; }
+        public ProvisionType ProvisionType { get; set; }
         public DateTimeOffset? From { get; set; }
         public DateTimeOffset? To { get; set; }
         public int Page { get; set; }

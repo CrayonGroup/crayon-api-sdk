@@ -7,6 +7,6 @@
         Usage = 2,
         OneTime = 3,
         Crayon = 4,
-        AzureMarketplace = 5
+        AzureMarketplace = 5,
     }
 }

@@ -11,6 +11,7 @@ namespace Crayon.Api.Sdk.Filtering
         }
 
         public RegionList RegionList { get; set; }
+        public int OrganizationId { get; set; }
         public int Page { get; set; }
         public int PageSize { get; set; }
         public string Search { get; set; }

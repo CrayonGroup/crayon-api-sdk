@@ -8,8 +8,13 @@
         FrameAgreement = 3,
         SamAgreement = 4,
         ConsultingAgreement = 5,
-        OtherAgreement = 6,
-        CloudAgreement = 7,
-        ReportingAgreement = 8
+        CloudSeatAgreement = 6,
+        CloudUsageAgreement = 7,
+        ReportingAgreement = 8,
+        OtherAgreement = 9,
+        Reserved1 = 10,
+        Reserved2 = 11,
+        Reserved3 = 12,
+        NewCommerceCSPSeats = 13
     }
 }

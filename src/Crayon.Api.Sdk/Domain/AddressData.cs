@@ -2,6 +2,8 @@
 {
     public class AddressData
     {
+        public long? AxAddressId { get; set; }
+
         public string Name { get; set; }
 
         public string CompleteAddress { get; set; }

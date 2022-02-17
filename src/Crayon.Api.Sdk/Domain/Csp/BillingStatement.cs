@@ -17,5 +17,7 @@ namespace Crayon.Api.Sdk.Domain.Csp
         public DateTimeOffset EndDate { get; set; }
 
         public ProvisionType ProvisionType { get; set; }
+
+        public string OrderId { get; set; }
     }
 }

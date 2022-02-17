@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Crayon.Api.Sdk.Resources
 {
@@ -39,9 +40,27 @@ namespace Crayon.Api.Sdk.Resources
             }
 
             var request = SetupAuthenticationRequest(clientId, clientSecret, userName, password, scopes);
-            var response = _client.SendRequest(request);
+            var response = _client.SendRequest(request, new RequestOptions());
 
             return _client.DeserializeResponseToResultOf<Token>(response);
+        }
+
+        public async Task<CrayonApiClientResult<Token>> GetUserTokenAsync(string clientId, string clientSecret, string userName, string password)
+        {
+            return await GetUserTokenAsync(clientId, clientSecret, userName, password, DefaultScopes);
+        }
+
+        public async Task<CrayonApiClientResult<Token>> GetUserTokenAsync(string clientId, string clientSecret, string userName, string password, IEnumerable<string> scopes)
+        {
+            if (scopes == null)
+            {
+                scopes = Enumerable.Empty<string>();
+            }
+
+            var request = SetupAuthenticationRequest(clientId, clientSecret, userName, password, scopes);
+            var response = _client.SendRequest(request, new RequestOptions());
+
+            return await _client.DeserializeResponseToResultOfAsync<Token>(response);
         }
 
         private static HttpRequestMessage SetupAuthenticationRequest(string clientId, string clientSecret, string userName, string password, IEnumerable<string> scopes)

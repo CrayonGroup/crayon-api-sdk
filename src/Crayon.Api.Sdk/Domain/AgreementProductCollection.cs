@@ -23,5 +23,6 @@ namespace Crayon.Api.Sdk.Domain
         public List<AggregationItem> Regions { get; set; }
         public List<AggregationItem> ProductCategories { get; set; }
         public List<ObjectReference> Agreements { get; set; }
+        public List<AggregationItem> BillingCycles { get; set; }
     }
 }
