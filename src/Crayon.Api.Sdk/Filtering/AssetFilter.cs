@@ -25,6 +25,7 @@ namespace Crayon.Api.Sdk.Filtering
         public string Search { get; set; }
         public AssetSortBy? SortBy { get; set; }
         public SortOrder SortOrder { get; set; }
+        public int InvoiceProfileId { get; set; }
 
         public string ToQueryString()
         {

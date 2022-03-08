@@ -38,6 +38,8 @@ namespace Crayon.Api.Sdk.Domain.Csp
 
         public string Name { get; set; }
 
+        public bool? AttestationAccepted { get; set; }
+
         public AssetTags Tags { get; set; }
 
         public ICollection<AssetOrderLineError> Errors { get; set; }
