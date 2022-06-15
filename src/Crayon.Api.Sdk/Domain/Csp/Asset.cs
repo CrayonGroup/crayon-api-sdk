@@ -67,5 +67,7 @@ namespace Crayon.Api.Sdk.Domain.Csp
         public AssetTags Tags { get; set; }
 
         public bool? AutoRenewEnabled { get; set; }
+
+        public int? ProductVariantId { get; set; }
     }
 }

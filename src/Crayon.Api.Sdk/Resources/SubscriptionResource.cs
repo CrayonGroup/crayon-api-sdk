@@ -85,6 +85,14 @@ namespace Crayon.Api.Sdk.Resources
             return await _client.PutAsync<SubscriptionDetailed>(token, uri, subscription);
         }
 
+        public async Task<CrayonApiClientResult<SubscriptionDetailed>> CreateNewCommerceOrderAsync(string token, NewCommerceOrder order)
+        {
+            Guard.NotNull(order, nameof(order));
+
+            var uri = "/api/v1/subscriptions/new-commerce-orders";
+            return await _client.PostAsync<SubscriptionDetailed>(token, uri, order);
+        }
+
         public CrayonApiClientResult<ApiCollection<SubscriptionConversion>> GetSubscriptionConversions(string token, int subscriptionId)
         {
             var uri = $"/api/v1/subscriptions/{subscriptionId}/conversions";
