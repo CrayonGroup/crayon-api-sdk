@@ -34,5 +34,6 @@ namespace Crayon.Api.Sdk.Domain
         public int[] AvailableBillingCycleIds { get; set; }
         public IDictionary<string, object> Attributes { get; set; }
         public decimal MinimumQuantity { get; set; }
+        public decimal? MaximumQuantity { get; set; }
     }
 }

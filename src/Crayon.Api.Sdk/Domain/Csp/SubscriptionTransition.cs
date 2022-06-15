@@ -10,7 +10,7 @@ namespace Crayon.Api.Sdk.Domain.Csp
 
         public string TransitionType { get; set; }
 
-        public BillingCycleEnum BillingCycle { get; set; }
+        public BillingCycleType BillingCycle { get; set; }
 
         public string Term { get; set; }
     }

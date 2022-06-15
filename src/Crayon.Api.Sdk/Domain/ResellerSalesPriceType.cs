@@ -4,6 +4,7 @@
     {
         License = 1,
         Usage = 2,
-        OneTime = 3
+        OneTime = 3,
+        LicenseNewCommerce = 4
     }
 }
