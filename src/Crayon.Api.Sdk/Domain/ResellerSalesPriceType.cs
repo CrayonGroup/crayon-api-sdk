@@ -4,7 +4,9 @@
     {
         License = 1,
         Usage = 2,
-        OneTime = 3,
-        LicenseNewCommerce = 4
+        NCELicense = 3,
+        AzurePlan = 4,
+        AzureReservation = 5,
+        Software = 6
     }
 }

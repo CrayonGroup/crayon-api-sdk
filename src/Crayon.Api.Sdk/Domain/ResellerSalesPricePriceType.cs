@@ -2,8 +2,9 @@
 {
     public enum ResellerSalesPricePriceType
     {
-        Markup = 1,
+        MarkupOnCost = 1,
         FixedPrice = 2,
         ListPrice = 3,
+        DiscountOnEstimatedRetailPrice = 4
     }
 }

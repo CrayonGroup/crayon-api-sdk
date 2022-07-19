@@ -6,6 +6,7 @@
         CustomerTenant = 2,
         Subscription = 3,
         SubscriptionAddon = 4,
-        AzureSubscription = 5
+        AzureSubscription = 5,
+        Asset = 6
     }
 }
