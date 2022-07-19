@@ -30,9 +30,9 @@ namespace Crayon.Api.Sdk.Domain.Csp
 
         public AssetScope Scope { get; set; }
 
-        public SalesPriceType ResellerPriceType { get; set; }
+        public ResellerSalesPricePriceType? ResellerPriceType { get; set; }
 
-        public decimal ResellerPriceTypeValue { get; set; }
+        public decimal? ResellerPriceTypeValue { get; set; }
 
         public bool IsTrial { get; set; }
 

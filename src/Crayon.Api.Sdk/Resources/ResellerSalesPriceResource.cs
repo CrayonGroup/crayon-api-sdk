@@ -56,7 +56,7 @@ namespace Crayon.Api.Sdk.Resources
         {
             Guard.NotNull(resellerSalesPrice, nameof(resellerSalesPrice));
 
-            var uri = $"api/v1/resellersalesprices/{oldFromDate.ToString("yyyy-MM-ddTHH:mm:ss.fffZ")}/ ";
+            var uri = $"api/v1/resellersalesprices/";
             return _client.Put<ResellerSalesPrice>(token, uri, resellerSalesPrice);
         }
 
@@ -64,7 +64,7 @@ namespace Crayon.Api.Sdk.Resources
         {
             Guard.NotNull(resellerSalesPrice, nameof(resellerSalesPrice));
 
-            var uri = $"api/v1/resellersalesprices/{oldFromDate.ToString("yyyy-MM-ddTHH:mm:ss.fffZ")}";
+            var uri = $"api/v1/resellersalesprices/";
             return await _client.PutAsync<ResellerSalesPrice>(token, uri, resellerSalesPrice);
         }
 

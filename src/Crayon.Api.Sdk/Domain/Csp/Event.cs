@@ -9,5 +9,7 @@ namespace Crayon.Api.Sdk.Domain.Csp
         public DateTimeOffset TimeStamp { get; set; }
 
         public string Status { get; set; }
+
+        public Attributes Attributes { get; set; }
     }
 }
