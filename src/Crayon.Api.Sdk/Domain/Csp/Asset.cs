@@ -54,10 +54,6 @@ namespace Crayon.Api.Sdk.Domain.Csp
 
         public string ChangedBy { get; set; }
 
-        public SalesPriceType ResellerPriceType { get; set; }
-
-        public decimal ResellerPriceTypeValue { get; set; }
-
         public string ReservedInstanceArtifactResourceId { get; set; }
 
         public DateTime? PurchaseDate { get; set; }

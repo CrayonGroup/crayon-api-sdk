@@ -89,6 +89,8 @@ namespace Crayon.Api.Sdk
             Tokens = new TokenResource(this);
             UsageCost = new UsageCostResource(this);
             Users = new UserResource(this);
+            PurchaseRequest = new PurchaseRequestResource(this);
+            ScheduledPurchaseRequest = new ScheduledPurchaseRequestResource(this);
         }
 
         public ActivityLogResource ActivityLog { get; }
@@ -125,6 +127,8 @@ namespace Crayon.Api.Sdk
         public TokenResource Tokens { get; }
         public UsageCostResource UsageCost { get; }
         public UserResource Users { get; }
+        public PurchaseRequestResource PurchaseRequest { get; }
+        public ScheduledPurchaseRequestResource ScheduledPurchaseRequest { get; }
 
         internal CrayonApiClientResult<T> Get<T>(string token, string uri, RequestOptions options = null)
         {

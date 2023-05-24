@@ -6,6 +6,7 @@ using Crayon.Api.Sdk.Domain;
 using Crayon.Api.Sdk.Domain.Csp;
 using Crayon.Api.Sdk.Extensions;
 using Crayon.Api.Sdk.Filtering;
+using System.Linq;
 
 namespace Crayon.Api.Sdk.Resources
 {
@@ -17,13 +18,12 @@ namespace Crayon.Api.Sdk.Resources
         {
             _client = client;
         }
-        
+
         public CrayonApiClientResult<ApiCollection<Subscription>> Get(string token, SubscriptionFilter filter = null)
         {
             var uri = "/api/v1/subscriptions/".Append(filter);
             return _client.Get<ApiCollection<Subscription>>(token, uri);
         }
-
 
         public async Task<CrayonApiClientResult<ApiCollection<Subscription>>> GetAsync(string token, SubscriptionFilter filter = null)
         {
@@ -55,10 +55,12 @@ namespace Crayon.Api.Sdk.Resources
 
         public CrayonApiRequest<SubscriptionDetailed> Create(string token, SubscriptionDetailed subscription)
         {
-            return new CrayonApiRequest<SubscriptionDetailed>(async options => {
+            return new CrayonApiRequest<SubscriptionDetailed>(async options =>
+            {
                 var uri = "/api/v1/subscriptions/";
                 return await _client.PostAsync<SubscriptionDetailed>(token, uri, subscription, options);
-            }, options => {
+            }, options =>
+            {
                 var uri = "/api/v1/subscriptions/";
                 return _client.Post<SubscriptionDetailed>(token, uri, subscription, options);
             });
@@ -177,7 +179,7 @@ namespace Crayon.Api.Sdk.Resources
             return _client.Get<ApiCollection<SubscriptionTransitionResponse>>(token, uri);
         }
 
-        public async Task<CrayonApiClientResult<ApiCollection<SubscriptionTransitionResponse>>> GetTransitionsAsync(string token, int id) 
+        public async Task<CrayonApiClientResult<ApiCollection<SubscriptionTransitionResponse>>> GetTransitionsAsync(string token, int id)
         {
             var uri = $"/api/v1/subscriptions/{id}/transitions/";
             return await _client.GetAsync<ApiCollection<SubscriptionTransitionResponse>>(token, uri);
@@ -228,6 +230,12 @@ namespace Crayon.Api.Sdk.Resources
         {
             var uri = $"/api/v1/subscriptions/{subscriptionId}/tags";
             return await _client.DeleteAsync(token, uri);
+        }
+
+        public async Task<CrayonApiClientResult<CoterminositySubscriptions>> GetCoterminositySubscriptionsAsync(string token, SubscriptionCoterminosityFilter filter)
+        {
+            var uri = "/api/v1/subscriptions/coterminosity/".Append(filter);
+            return await _client.GetAsync<CoterminositySubscriptions>(token, uri);
         }
     }
 }

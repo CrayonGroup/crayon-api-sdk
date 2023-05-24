@@ -1,4 +1,6 @@
-﻿namespace Crayon.Api.Sdk.Domain.Csp
+﻿using System;
+
+namespace Crayon.Api.Sdk.Domain.Csp
 {
     public class NewCommerceOrderResult
     {
@@ -6,6 +8,7 @@
         public string ErrorReasonCode { get; set; }
         public string ErrorDescription { get; set; }
         public System.Guid? NewCommerceOrderId { get; set; }
+        public DateTime? ScheduledDate { get; set; }
 
     }
 }

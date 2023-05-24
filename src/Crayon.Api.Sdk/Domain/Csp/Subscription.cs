@@ -68,5 +68,7 @@ namespace Crayon.Api.Sdk.Domain.Csp
         public DateTimeOffset? CancellationAllowedUntilDate { get; set; }
 
         public ScheduledNextTermInstructions ScheduledNextTermInstructions { get; set; }
+
+        public int? MaxEndCustomerQuantity { get; set; }
     }
 }

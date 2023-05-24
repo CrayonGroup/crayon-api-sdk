@@ -1,7 +1,6 @@
 using Crayon.Api.Sdk.Domain;
 using Crayon.Api.Sdk.Domain.Csp;
 using Crayon.Api.Sdk.Filtering;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Crayon.Api.Sdk.Resources
@@ -33,22 +32,10 @@ namespace Crayon.Api.Sdk.Resources
             return await _client.GetAsync<ApiCollection<Asset>>(token, uri);
         }
 
-        public async Task<CrayonApiClientResult<AssetOrder>> VerifyAsync(string token, AssetOrder order)
-        {
-            const string uri = "api/v1/assets/verify";
-            return await _client.PostAsync<AssetOrder>(token, uri, order);
-        }
-
-        public async Task<CrayonApiClientResult> CheckoutAsync(string token, AssetOrder order)
-        {
-            const string uri = "api/v1/assets/checkout";
-            return await _client.PostAsync<AssetOrder>(token, uri, order);
-        }
-
-        public async Task<CrayonApiClientResult<ApiCollection<AssetOrder>>> GetOrdersAsync(string token, AssetFilter filter = null)
+        public async Task<CrayonApiClientResult<ApiCollection<PurchaseRequestOrder>>> GetOrdersAsync(string token, AssetFilter filter = null)
         {
             var uri = "api/v1/assets/orders/".Append(filter);
-            return await _client.GetAsync<ApiCollection<AssetOrder>>(token, uri);
+            return await _client.GetAsync<ApiCollection<PurchaseRequestOrder>>(token, uri);
         }
 
         public async Task<CrayonApiClientResult<Asset>> UpdateAssetAsync(string token, int assetId, Asset asset)

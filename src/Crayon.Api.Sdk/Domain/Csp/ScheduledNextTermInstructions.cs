@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Crayon.Api.Sdk.Domain.Csp
 {
     public class ScheduledNextTermInstructions
@@ -6,6 +8,8 @@ namespace Crayon.Api.Sdk.Domain.Csp
         public Product Product { get; set; }
 
         public int Quantity { get; set; }
+
+        public DateTime? CustomTermEndDate { get; set; }
     }
 
     public class Product

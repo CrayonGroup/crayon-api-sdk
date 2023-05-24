@@ -21,10 +21,10 @@
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <LangVersion>7.3</LangVersion>
-    <Version>1.5.3</Version>
-    <AssemblyVersion>1.5.3</AssemblyVersion>
-    <FileVersion>1.5.3</FileVersion>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <Version>1.5.4</Version>
+	  <AssemblyVersion>1.5.4</AssemblyVersion>
+	  <FileVersion>1.5.4</FileVersion>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>

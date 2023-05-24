@@ -24,7 +24,6 @@ namespace Crayon.Api.Sdk.Filtering
         public int CustomerTenantId { get; set; }
         public int AgreementId { get; set; }
         public bool? IsTrial { get; set; }
-        public bool? IgnoreTermBillingCycleCombinationsCheck { get; set; }
         public List<int> AgreementIds { get; set; }
         public DateTimeOffset? SearchDate { get; set; }
         public AgreementProductsSubFilter Include { get; set; }

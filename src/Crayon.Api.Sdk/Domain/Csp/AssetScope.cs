@@ -9,6 +9,7 @@ namespace Crayon.Api.Sdk.Domain.Csp
     public enum AssetScope
     {
         Shared = 1,
-        Single = 2
+        Single = 2,
+        ManagementGroups = 3
     }
 }

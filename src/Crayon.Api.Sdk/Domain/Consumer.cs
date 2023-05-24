@@ -6,6 +6,8 @@
 
         public string Name { get; set; }
 
+        public string LegalName { get; set; }
+
         public ObjectReference Organization { get; set; }
     }
 }
